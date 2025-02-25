@@ -1,0 +1,726 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>无标题</title><style>
+	details {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #007bff;
+}
+
+summary:hover {
+    text-decoration: underline;
+}
+
+details[open] {
+    background: #e9f5ff;
+}
+
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1a4a84cb-7aff-80f4-b20c-c30811d7fbe6" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>状态</th><td><span class="status-value"><div class="status-dot"></div>未开始</span></td></tr></tbody></table></header><div class="page-body"><p id="1a4a84cb-7aff-808a-8122-c909ec866cff" class=""><strong>Checklist for Incorporating the Business into a Private Limited Company</strong></p><ul id="1a4a84cb-7aff-80de-95c7-c02cc3d13b47" class="toggle"><li><details open=""><summary><strong><span style="border-bottom:0.05em solid">Step 1: Choose a Company Name</span></strong></summary><ul id="1a4a84cb-7aff-808e-b972-dee65602048b" class="toggle"><li><details open=""><summary><strong>1.1 Review the </strong><strong><a href="https://www.gov.uk/limited-company-formation/choose-company-name">Companies House naming guideline</a></strong><strong>.</strong></summary><p id="1a4a84cb-7aff-8018-bb75-d75e8cb26c2f" class="">Your company name <strong><span style="border-bottom:0.05em solid">must</span></strong> follow Companies House rules.</p><p id="1a4a84cb-7aff-800d-8c66-e446259f0f61" class="">The name <strong><span style="border-bottom:0.05em solid">must</span></strong> be unique and distinguishable.</p><p id="1a4a84cb-7aff-802e-a8b0-f0c06ebf8a30" class="">It must <strong><span style="border-bottom:0.05em solid">not</span></strong> be offensive, misleading, or contain certain restricted words without permission.</p><ul id="1a4a84cb-7aff-8071-bbef-fd677b3bba60" class="bulleted-list"><li style="list-style-type:disc">Example: to use ‘Accredited’ in your company’s name, you need permission from the Department for Business and Trade (DBT).</li></ul><p id="1a4a84cb-7aff-8079-bef5-e35890bd2a51" class=""><a href="https://www.gov.uk/government/publications/incorporation-and-names/incorporation-and-names">Guidance on naming your company and which words you need permission to use</a></p></details></li></ul><ul id="1a4a84cb-7aff-80ec-98d5-e4e97046d7da" class="toggle"><li><details open=""><summary><strong>1.2 Ensure the company’s name is not identical, the “same as” or “too like” an existing trade name.</strong></summary><p id="1a4a84cb-7aff-808e-97ee-cb791fb1599f" class="">‘Same as’ names</p><ul id="1a4a84cb-7aff-80b4-9f76-d9626c5893a2" class="bulleted-list"><li style="list-style-type:disc">A ‘same as’ name differs only by punctuation, special characters, or common words.</li></ul><ul id="1a4a84cb-7aff-80be-9554-da1b129133ad" class="bulleted-list"><li style="list-style-type:disc">Example: ‘Hands UK Ltd’ and ‘Hand’s Ltd’ are considered the same as ‘Hands Ltd’.</li></ul><ul id="1a4a84cb-7aff-803e-9a64-f681e83bd7a5" class="bulleted-list"><li style="list-style-type:disc">You can use a ‘same as’ name only if your company is part of the same group as the existing company and you have written confirmation of no objection.</li></ul><p id="1a4a84cb-7aff-8080-9870-f5329409936e" class="">‘Too like’ names</p><ul id="1a4a84cb-7aff-80dd-8568-c0ddd5b72832" class="bulleted-list"><li style="list-style-type:disc">A ‘too like’ name may require a change if someone complains.</li></ul><ul id="1a4a84cb-7aff-808c-8389-fd98eba77cb2" class="bulleted-list"><li style="list-style-type:disc">Example: ‘Easy Electrics For You Ltd&#x27; is considered too like ‘EZ’ Electrix 4U Ltd’.</li></ul><p id="1a4a84cb-7aff-8023-84a9-f69cdfec70b7" class="">You can check your company’s name availability using <a href="https://find-and-update.company-information.service.gov.uk/company-name-availability">Companies House Name Checker</a></p></details></li></ul><ul id="1a4a84cb-7aff-8023-92bc-e30f9f75148e" class="toggle"><li><details open=""><summary><strong>1.3 Trading names (using a different name to your registered company name)</strong></summary><p id="1a4a84cb-7aff-805c-9f49-ed64f67a668c" class="">You can trade under a different name than your registered company name. This is known as a ‘business name’.</p><ul id="1a4a84cb-7aff-80c5-9cc0-facfc970d9d4" class="bulleted-list"><li style="list-style-type:disc">Business Name Must <strong><span style="border-bottom:0.05em solid">Not</span></strong> include:<ul id="1a4a84cb-7aff-80eb-8767-e0b738398188" class="bulleted-list"><li style="list-style-type:circle">‘Limited’, ‘Ltd’, ‘LLP’, ‘plc’ (or similar legal endings).</li></ul><ul id="1a4a84cb-7aff-8081-aea8-f5461f1b20fa" class="bulleted-list"><li style="list-style-type:circle">‘Sensitive’ words without permission.</li></ul></li></ul><ul id="1a4a84cb-7aff-80e3-a2fb-c517fd4aaf70" class="bulleted-list"><li style="list-style-type:disc">Trade mark Conflicts:<ul id="1a4a84cb-7aff-80b7-ab5f-c5be6001770b" class="bulleted-list"><li style="list-style-type:circle">If your business name is too similar to another company’s trademark, you may be required to change it if someone complains.</li></ul><ul id="1a4a84cb-7aff-80b9-8f47-e97ce0f5521e" class="bulleted-list"><li style="list-style-type:circle">Check Trademarks <a href="https://www.gov.uk/search-for-trademark">here</a>.</li></ul></li></ul></details></li></ul><ul id="1a4a84cb-7aff-8096-8d42-c78b9c94d87e" class="toggle"><li><details open=""><summary><strong>1.4 Rules for displaying your company name</strong></summary><p id="1a4a84cb-7aff-8080-8b95-f52bc958807f" class="">Signs</p><ul id="1a4a84cb-7aff-803e-a16a-c11d89ab9b30" class="bulleted-list"><li style="list-style-type:disc">You <strong><span style="border-bottom:0.05em solid">must </span></strong>display a sign showing your company name at your registered company address and at all locations where your business operates.<ul id="1a4a84cb-7aff-80e8-ae26-cafa5859cfa6" class="bulleted-list"><li style="list-style-type:circle">However, if you are running your business from home, displaying a sign there is not required.</li></ul><ul id="1a4a84cb-7aff-807d-94cc-fb8567da292c" class="bulleted-list"><li style="list-style-type:circle">Examples: if you are running 3 shops and an office (not at home), you must display a sign at each location.</li></ul><ul id="1a4a84cb-7aff-8072-9245-ef7538db6fa0" class="bulleted-list"><li style="list-style-type:circle">The sign must be easy to read and visible at all times, not just when you are open.</li></ul></li></ul><p id="1a4a84cb-7aff-801a-9a8f-ca58ac2f6e67" class="">Stationery and promotional Material</p><ul id="1a4a84cb-7aff-8022-b31b-e4d07b795f1d" class="bulleted-list"><li style="list-style-type:disc">Your company’s name must be included on all company documents, publicity materials, and letters, which <strong><span style="border-bottom:0.05em solid">must </span></strong>show:<ul id="1a4a84cb-7aff-80b2-9bda-cacc7d618000" class="bulleted-list"><li style="list-style-type:circle">Your company’s registered number.</li></ul><ul id="1a4a84cb-7aff-80f1-8126-e1e5276fd67b" class="bulleted-list"><li style="list-style-type:circle">Its registered office address.</li></ul><ul id="1a4a84cb-7aff-803d-8c00-d6f2aff3bea2" class="bulleted-list"><li style="list-style-type:circle">Where the company is registered (e.g., England and Wales, Scotland, or Northern Ireland).</li></ul></li></ul><ul id="1a4a84cb-7aff-80db-b771-ef73dc17ef05" class="bulleted-list"><li style="list-style-type:disc">Check the rules you <strong><span style="border-bottom:0.05em solid">must</span></strong><strong> </strong>follow about displaying your company name <a href="https://www.gov.uk/running-a-limited-company/signs-stationery-and-promotional-material">here</a>.</li></ul></details></li></ul></details></li></ul><ul id="1a4a84cb-7aff-808a-aaf4-ff533632ece3" class="toggle"><li><details open=""><summary><strong><span style="border-bottom:0.05em solid">Step 2: Choose directors and a company secretary</span></strong></summary><p id="1a4a84cb-7aff-80d3-8fa1-d7c38a78e1ce" class="">Your company name <strong><span style="border-bottom:0.05em solid">must</span></strong> follow Companies House rules.</p><p id="1a4a84cb-7aff-808e-b2be-df2acb3cf105" class="">The name <strong><span style="border-bottom:0.05em solid">must</span></strong> be unique and distinguishable.</p><p id="1a4a84cb-7aff-80d2-8c86-fc2f5ca309ca" class="">It must <strong><span style="border-bottom:0.05em solid">not</span></strong> be offensive, misleading, or contain certain restricted words without permission.</p><ul id="1a4a84cb-7aff-80c1-a261-c43533215ac7" class="bulleted-list"><li style="list-style-type:disc">Example: to use ‘Accredited’ in your company’s name, you need permission from the Department for Business and Trade (DBT).</li></ul><p id="1a4a84cb-7aff-800e-b4cf-d12ef912c50a" class=""><a href="https://www.gov.uk/government/publications/incorporation-and-names/incorporation-and-names">Guidance on naming your company and which words you need permission to use</a></p><p id="1a4a84cb-7aff-8009-8469-e5daafde2f7f" class="">You must appoint a director but you do not have to appoint a company secretary.</p><ul id="1a4a84cb-7aff-8063-81c0-c0a817ee0983" class="toggle"><li><details open=""><summary><strong>2.1 Appoint directors</strong></summary><p id="1a4a84cb-7aff-80c6-99eb-cd7bb3ada4fd" class="">Your company must have at least one director (which can be yourself).</p><p id="1a4a84cb-7aff-8024-899e-ef2e3e479a97" class="">A director must be 16 or over and not disqualified from being a director.</p><p id="1a4a84cb-7aff-80c1-b6ae-e9a40a9c31da" class="">You should provide below details of the director (which are publicly available</p><p id="1a4a84cb-7aff-8045-8878-c34b2171f804" class="">from Companies House):</p><p id="1a4a84cb-7aff-80f3-a94d-fd518a2a0c73" class="">Full name</p><p id="1a4a84cb-7aff-806b-bffb-e6c851130dde" class="">Date of birth</p><p id="1a4a84cb-7aff-8073-bc2d-f21964e97ac1" class="">Address</p><p id="1a4a84cb-7aff-8075-8721-cf60646621d4" class="">Nationality</p><p id="1a4a84cb-7aff-802d-82c9-c98442e2eccb" class="">Occupation</p><p id="1a4a84cb-7aff-804e-9513-ee372547d1f1" class="">Directors must provide 2 addresses:</p><p id="1a4a84cb-7aff-80dd-aed0-cbbf497e6f81" class="">A service address (can be the same as the registered office address of the</p><p id="1a4a84cb-7aff-8018-8ac4-c9eb0c9afa00" class="">company, or it can be somewhere different).</p><p id="1a4a84cb-7aff-804e-90d8-f9cb544da6ad" class="">Usual residential address (the director’s home address, which will not be</p><p id="1a4a84cb-7aff-80fb-b6c0-e1177867db19" class="">available on the public register for everyone to see).</p><p id="1a4a84cb-7aff-8054-9551-c63fb757e9c1" class="">You could check your personal information on the Companies House register</p><p id="1a4a84cb-7aff-8033-b5b0-ee30cea4ef38" class=""><a href="https://www.gov.uk/guidance/your-personal-information-on-the-public-record-at-companies-house#:~:text=A%20service%20address%20is%20a,address%20or%20company&#x27;s%20registered%20office.">here</a>.</p></details></li></ul><ul id="1a4a84cb-7aff-80e9-a609-e24b3312792a" class="toggle"><li><details open=""><summary><strong>2.2 Directors’ responsibilities</strong></summary><p id="1a4a84cb-7aff-807c-bb37-c3b5adb35a63" class=""><strong> </strong>As a director of a limited company, you <strong><span style="border-bottom:0.05em solid">must</span></strong>:</p><p id="1a4a84cb-7aff-8003-aacd-e583655d6473" class="">follow the company’s rules, shown in its articles of association (see Step 4).</p><p id="1a4a84cb-7aff-80cf-81f7-c6e25a584919" class="">keep company records and report changes</p><ul id="1a4a84cb-7aff-806e-b6c1-c6baf765dfb6" class="toggle"><li><details open=""><summary><strong>2.2.1 Companies records (see Step 5)</strong></summary></details></li></ul><ul id="1a4a84cb-7aff-80c3-846d-f5e4d8dca030" class="toggle"><li><details open=""><summary><strong>2.2.2 Report changes</strong></summary><ul id="1a4a84cb-7aff-8089-9169-eca9a1ade5d6" class="bulleted-list"><li style="list-style-type:disc">You must report certain changes to Companies House, e.g., changing your company’s registered office address, changing your company’s registered email address etc.</li></ul><ul id="1a4a84cb-7aff-80ba-9065-c05a25300c21" class="bulleted-list"><li style="list-style-type:disc">For further details, please click <a href="https://www.gov.uk/running-a-limited-company/company-changes-you-must-report">here</a>.</li></ul><ul id="1a4a84cb-7aff-8012-a824-ec7219813239" class="bulleted-list"><li style="list-style-type:disc">You can report any changes to the Companies House through <a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house">here</a>.</li></ul><p id="1a4a84cb-7aff-805f-8f1b-cf1488092482" class="">file your accounts and your Company Tax Return</p></details></li></ul><ul id="1a4a84cb-7aff-800e-a3b8-e75f8bcb7605" class="toggle"><li><details open=""><summary><strong>2.2.3 To file your accounts and your Company Tax Return, you will need your:</strong></summary><ul id="1a4a84cb-7aff-80ad-a78c-e91bad17c85a" class="bulleted-list"><li style="list-style-type:disc">HMRC online account details</li></ul><ul id="1a4a84cb-7aff-804a-b4b7-d430c6167457" class="bulleted-list"><li style="list-style-type:disc">Company Registration number</li></ul><ul id="1a4a84cb-7aff-802e-afab-ea162aa1df42" class="bulleted-list"><li style="list-style-type:disc">Companies House online account details.</li></ul><ul id="1a4a84cb-7aff-8011-b1c8-db741cc91687" class="bulleted-list"><li style="list-style-type:disc">For further details, please click <a href="https://www.gov.uk/prepare-file-annual-accounts-for-limited-company/file-your-accounts-and-company-tax-return">here</a>.</li></ul><p id="1a4a84cb-7aff-80b1-991c-d6569c400d2d" class="">tell other shareholders if you might personally benefit from a transaction the company makes</p><p id="1a4a84cb-7aff-8042-b412-f7001edbafce" class="">pay Corporation Tax</p><ul id="1a4a84cb-7aff-802b-b037-fe4790ba52fd" class="bulleted-list"><li style="list-style-type:disc">You must pay Corporation Tax on profits from doing business as a limited company.</li></ul><ul id="1a4a84cb-7aff-807e-bcb3-fa195503c23f" class="bulleted-list"><li style="list-style-type:disc">Taxable profits for Corporation Tax include the money your company or association makes from doing business, investments, and selling assets for more than they cost.</li></ul><ul id="1a4a84cb-7aff-80d1-93cb-de19513e5049" class="bulleted-list"><li style="list-style-type:disc">For further details, please click <a href="https://www.gov.uk/corporation-tax">here</a>.</li></ul></details></li></ul></details></li></ul><ul id="1a4a84cb-7aff-804b-aaea-f26587e6d83a" class="toggle"><li><details open=""><summary><strong>2.3 Company secretary</strong></summary><p id="1a4a84cb-7aff-80d2-87ad-c6d52064e8c2" class="">You do not need a company secretary for a private limited company.</p><ul id="1a4a84cb-7aff-809e-8d8a-f235f9fd6efc" class="bulleted-list"><li style="list-style-type:disc">Some companies use them to take on some of the directors’ responsibilities.</li></ul></details></li></ul></details></li></ul><ul id="1a4a84cb-7aff-80d1-a844-cb7fcfcc7ac9" class="toggle"><li><details open=""><summary><strong><span style="border-bottom:0.05em solid">Step 3: Decide who the shareholders or guarantors are</span></strong></summary><p id="1a4a84cb-7aff-806d-a8ad-feefd3751590" class="">Most limited companies are ‘limited by shares’, meaning they are owned by shareholders who hold shares and have voting rights.</p><ul id="1a4a84cb-7aff-80dc-a59d-e3d457248a37" class="toggle"><li><details open=""><summary><strong>3.1 Share particulars</strong></summary><p id="1a4a84cb-7aff-8016-b90f-f5e660ef5c16" class="">Every limited company <strong><span style="border-bottom:0.05em solid">must</span></strong> have at least one class of ordinary shares that cannot be redeemed.</p><ul id="1a4a84cb-7aff-8056-aec8-f38a21f171da" class="bulleted-list"><li style="list-style-type:disc">This means that the company cannot buy back those shares from shareholder at any point in the future.</li></ul><p id="1a4a84cb-7aff-8083-8c20-cb645bc0d386" class="">At least one of these irredeemable shares <strong><span style="border-bottom:0.05em solid">must</span></strong> be in effect when incorporating the company.</p></details></li></ul><ul id="1a4a84cb-7aff-80df-bb6f-d112e1dd9ab0" class="toggle"><li><details open=""><summary><strong>3.2 Understanding share ownership</strong></summary><p id="1a4a84cb-7aff-80e9-8b6b-fe012694d96d" class="">Most companies issue ‘ordinary’ shares, giving shareholders:</p><ul id="1a4a84cb-7aff-8012-b905-e8c5e6762ecb" class="bulleted-list"><li style="list-style-type:disc">One vote per share on company decisions.</li></ul><ul id="1a4a84cb-7aff-80ed-8aae-ebb56e69034e" class="bulleted-list"><li style="list-style-type:disc">Dividend payments when profits are distributed.</li></ul><p id="1a4a84cb-7aff-80e7-afb6-eeeae7b36ae2" class="">A company limited by shares must have at least one shareholder (who can also be the director).</p><ul id="1a4a84cb-7aff-800b-80a3-dc642d8184e9" class="bulleted-list"><li style="list-style-type:disc">No maximum number of shareholders.</li></ul><ul id="1a4a84cb-7aff-80eb-af3c-c183d9749d23" class="bulleted-list"><li style="list-style-type:disc">This means that you can be the sole member, the sole shareholder, and the sole director of the company.</li></ul><ul id="1a4a84cb-7aff-8029-ab40-e56789f0c07f" class="bulleted-list"><li style="list-style-type:disc">Share price can be any value, e.g., £1 per share.</li></ul></details></li></ul><ul id="1a4a84cb-7aff-8003-b84e-de5c08581c9d" class="toggle"><li><details open=""><summary><strong>3.3 Issuing your initial shares</strong></summary><p id="1a4a84cb-7aff-801f-b7e3-c469e0f20d6b" class="">When registering a company, you <strong><span style="border-bottom:0.05em solid">must</span></strong> provide a statement of capital, which</p><p id="1a4a84cb-7aff-80d6-860b-c07f89393748" class="">includes:</p><p id="1a4a84cb-7aff-8045-9d55-cb00bf2c6bd6" class="">The number of shares issued and their total value (company’s ‘share capital’).</p><p id="1a4a84cb-7aff-80bf-9509-d2ceb70e199b" class="">The names and addresses of all shareholders – known as ‘subscribers’ or ‘members’</p><ul id="1a4a84cb-7aff-8034-b0a4-c82c56cf8fa1" class="bulleted-list"><li style="list-style-type:disc">Example: if a company issues 500 shares at £1 each, the share capital is £500.</li></ul></details></li></ul><ul id="1a4a84cb-7aff-8054-97f6-e90510150012" class="toggle"><li><details open=""><summary><strong>3.4 Prescribed particulars (Shareholder’s rights)</strong></summary><p id="1a4a84cb-7aff-80e4-8bfd-f4ba75c40b8a" class="">You <strong><span style="border-bottom:0.05em solid">must</span></strong> include details on each share type’s rights, and <strong><span style="border-bottom:0.05em solid">must </span></strong>include:</p><p id="1a4a84cb-7aff-806e-af9c-e06347d87084" class="">The share of dividends shareholders get.</p><p id="1a4a84cb-7aff-80cb-8b95-f5a7e2ee0128" class="">Share value, are their shares exchangeable (‘redeemable’) for money?</p><p id="1a4a84cb-7aff-8075-8f61-e13d5cedf3a8" class="">Shareholder’s eligibility to vote on certain company matters.</p><p id="1a4a84cb-7aff-80df-bbab-c240d9faa923" class="">Voting results.</p></details></li></ul><ul id="1a4a84cb-7aff-803e-8c9f-ca2eab46aeaa" class="toggle"><li><details open=""><summary><strong>3.5 Identify people with significant control (PSC) over your company.</strong></summary><p id="1a4a84cb-7aff-80c7-b568-ef7f7ccd6343" class="">A PSC is someone who owns or has major influence over your company.</p><p id="1a4a84cb-7aff-8038-aa21-cfe4d8a80315" class="">If you run a private limited company, you are legally required to:</p><p id="1a4a84cb-7aff-8027-a1a5-c4b64ac83d36" class="">Identify at least one PSC (if applicable).</p><p id="1a4a84cb-7aff-805b-8496-ed3f83387981" class="">Keep a PSC register (a record of who controls your company).</p><p id="1a4a84cb-7aff-804f-a08a-d44f5483d425" class="">Submit PSC details when setting up your company</p><ul id="1a4a84cb-7aff-80c3-982d-eaabe77e6742" class="toggle"><li><details open=""><summary><strong>3.5.1 Identifying a PSC</strong></summary><p id="1a4a84cb-7aff-80b5-80dd-da2171aebd6c" class="">A PSC meets at least one of the following conditions:</p><p id="1a4a84cb-7aff-80a4-9cba-fdd70bc3b61b" class="">Holds more than 25% of shares in the company.</p><p id="1a4a84cb-7aff-804d-8b84-d18eb86e7842" class="">Holds more than 25% of voting rights.</p><p id="1a4a84cb-7aff-804d-96c5-fd82af87b8df" class="">Has the right to appoint or remove a majority of directors.</p><p id="1a4a84cb-7aff-80ac-9130-dbb3ca64af9e" class="">Exercises significant influence or control over the company.</p></details></li></ul><ul id="1a4a84cb-7aff-801c-b183-fe37722793ca" class="toggle"><li><details open=""><summary><strong>3.5.2 Recording PSC information</strong></summary><p id="1a4a84cb-7aff-808f-9a3a-da6489e36f1e" class=""><strong> </strong>When setting up your company, you <strong><span style="border-bottom:0.05em solid">must</span></strong> provide:</p><p id="1a4a84cb-7aff-80bb-9fb1-c35032022764" class="">Full name</p><p id="1a4a84cb-7aff-807a-9452-cb865824136b" class="">Date of birth</p><p id="1a4a84cb-7aff-804a-b752-f3f80dd77f13" class="">Nationality and country of residence</p><p id="1a4a84cb-7aff-809b-8e18-f5213c6c3b9d" class="">Correspondence address (publicly available)</p><p id="1a4a84cb-7aff-80c8-a19a-e0db936dce07" class="">Home address (non-disclosable)</p><p id="1a4a84cb-7aff-8094-9e20-d878167f1890" class="">The date they become PSC of the company</p><p id="1a4a84cb-7aff-804c-aeb5-d6c298d5d8f4" class="">The date you entered them into your PSC register</p><p id="1a4a84cb-7aff-8099-b58b-e7665f50672d" class="">All natures of control which apply</p><p id="1a4a84cb-7aff-8002-90ca-e14db2462b8e" class="">Level of their shares and voting rights</p></details></li></ul><ul id="1a4a84cb-7aff-80ff-be65-c7926b6e8bbf" class="toggle"><li><details open=""><summary><strong>3.5.3 Keep your PSC register updated </strong><strong><a href="https://www.gov.uk/file-changes-to-a-company-with-companies-house">here</a></strong> </summary><p id="1a4a84cb-7aff-80af-b3dc-f1d9c42d139e" class="">Changes must be recorded within 14 days.</p><p id="1a4a84cb-7aff-8036-92ab-d1ebb1258044" class="">Updates must be sent to Companies House within another 14 days.</p></details></li></ul><ul id="1a4a84cb-7aff-8098-86ba-d3238108e44e" class="toggle"><li><details open=""><summary><strong>3.5.4 Compliance and penalties</strong></summary><ul id="1a4a84cb-7aff-8053-ba4d-d295304d05b3" class="bulleted-list"><li style="list-style-type:disc">Failure to provide PSC information is a criminal offence.</li></ul><ul id="1a4a84cb-7aff-8041-92bd-f8d88e810bd9" class="bulleted-list"><li style="list-style-type:disc">Providing false PSC details can result in a fine or up to 2 years in prison.</li></ul><ul id="1a4a84cb-7aff-804c-9f77-e0655143dfb6" class="bulleted-list"><li style="list-style-type:disc">Refusing to disclose PSC details allows the company to restrict their shares or voting rights.</li></ul><p id="1a4a84cb-7aff-80fb-9777-cc83f804da35" class="">For further details of Step 3.1-3.4, click <a href="https://www.gov.uk/limited-company-formation/shareholders?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763">here</a>. For Step 3.5, click <a href="https://www.gov.uk/guidance/people-with-significant-control-pscs?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763">here</a>.</p></details></li></ul></details></li></ul></details></li></ul><ul id="1a4a84cb-7aff-80af-b15e-e6eed7baa6e9" class="toggle"><li><details open=""><summary><strong><span style="border-bottom:0.05em solid">Step 4: Memorandum and Articles of Association</span></strong></summary><p id="1a4a84cb-7aff-8023-a118-c4db71529ee4" class="">You <strong><span style="border-bottom:0.05em solid">must</span></strong><strong> </strong>prepare two key legal documents when registering your company:</p><p id="1a4a84cb-7aff-80f9-9334-e02f05261159" class="">Memorandum of Association</p><ul id="1a4a84cb-7aff-8046-aff8-f7c3e7e2ef57" class="bulleted-list"><li style="list-style-type:disc">A legal statement signed by all initial shareholders agreeing to form the company.</li></ul><p id="1a4a84cb-7aff-80e1-8392-c1bc8c7ebf0f" class="">Articles of Association</p><ul id="1a4a84cb-7aff-80a1-968a-c427875356a9" class="bulleted-list"><li style="list-style-type:disc">The rules for running the company, agreed upon by shareholders, guarantors, directors, and the company secretary (if applicable).</li></ul><ul id="1a4a84cb-7aff-8018-b314-c32b7096e4db" class="toggle"><li><details open=""><summary><strong>4.1 Memorandum of Association</strong></summary><p id="1a4a84cb-7aff-8011-8873-de4469e39dbc" class="">If you register online, the memorandum is created automatically during registration.</p><p id="1a4a84cb-7aff-80df-bc22-c5bb95b44f69" class="">If you register by post, you can use the <a href="https://www.gov.uk/government/publications/give-notice-of-subscribers-company-with-share-capital">memorandum of association template</a>.</p><ul id="1a4a84cb-7aff-8098-a91a-e3e7cb9e9332" class="bulleted-list"><li style="list-style-type:disc">You cannot update the memorandum once the company has been registered.</li></ul></details></li></ul><ul id="1a4a84cb-7aff-8096-a0d3-f279cbc70568" class="toggle"><li><details open=""><summary><strong>4.2 Articles of Association</strong></summary><p id="1a4a84cb-7aff-80e0-ba0d-c71873fa943c" class=""> You can choose one of two options:</p><p id="1a4a84cb-7aff-80b6-b542-c44d9b90f53e" class="">Use standard ‘<a href="https://www.gov.uk/limited-company-formation/memorandum-and-articles-of-association?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763">model articles</a>’ (provided by Companies House)</p><p id="1a4a84cb-7aff-8077-9583-dd45924b365b" class="">OR</p><p id="1a4a84cb-7aff-80b3-afb1-fdb0c26221fe" class="">Write your own and upload or send them when you register your company.</p></details></li></ul></details></li></ul><ul id="1a4a84cb-7aff-80c5-882b-c2b11e636f12" class="toggle"><li><details open=""><summary><strong><span style="border-bottom:0.05em solid">Step 5: Check what records you will need to keep</span></strong></summary><ul id="1a4a84cb-7aff-80cf-aef6-c48d55af7c6c" class="toggle"><li><details open=""><summary><strong>5.1 Company records</strong></summary><p id="1a4a84cb-7aff-8076-90b4-cd8d24a300e4" class="">You must keep details of, e.g. information of directors or shareholders, results of any shareholder votes and resolutions.</p><ul id="1a4a84cb-7aff-8070-ad49-d2800cf19f9a" class="bulleted-list"><li style="list-style-type:disc">A comprehensive list of details record that you need to keep can be found <a href="https://www.gov.uk/running-a-limited-company/company-and-accounting-records">here</a>.</li></ul></details></li></ul><ul id="1a4a84cb-7aff-8046-9f70-d6506c7424c3" class="toggle"><li><details open=""><summary><strong>5.2 Register of ‘People with Significant Control’ (Step 3.5)</strong></summary></details></li></ul><ul id="1a4a84cb-7aff-8049-aaeb-ca61926c951c" class="toggle"><li><details open=""><summary><strong>5.3 Accounting records</strong></summary><p id="1a4a84cb-7aff-8052-8190-d958bd691ab9" class="">You <strong><span style="border-bottom:0.05em solid">must </span></strong>keep accounting records that include, e.g., details of assets owned by the company, debts the company owes or is owed etc.</p><ul id="1a4a84cb-7aff-8055-843c-c13af4770c54" class="bulleted-list"><li style="list-style-type:disc">For further details, please click <a href="https://www.gov.uk/running-a-limited-company/company-and-accounting-records?step-by-step-nav=37e4c035-b25c-4289-b85c-c6d36d11a763">here</a>.</li></ul></details></li></ul><ul id="1a4a84cb-7aff-8047-9290-e04128581f17" class="toggle"><li><details open=""><summary><strong>5.4 Duration of kept records</strong></summary><p id="1a4a84cb-7aff-80fc-849a-f85f1d3f7cc0" class="">Your company’s records <strong><span style="border-bottom:0.05em solid">must </span></strong>be kept for at least 6 years from the end of the financial year they relate to.</p><p id="1a4a84cb-7aff-8050-b029-da7509d65cc0" class="">You may need to keep them longer if:</p><ul id="1a4a84cb-7aff-80fd-904a-e22c38426500" class="bulleted-list"><li style="list-style-type:disc">They cover transactions spanning multiple accounting periods.</li></ul><ul id="1a4a84cb-7aff-8076-b3c4-e869b48339bf" class="bulleted-list"><li style="list-style-type:disc">The company owns long-term assets, e.g., equipment or machinery.</li></ul><ul id="1a4a84cb-7aff-80a1-b76d-df9f4f2292a9" class="bulleted-list"><li style="list-style-type:disc">You filed your Company Tax Return late.</li></ul><ul id="1a4a84cb-7aff-8043-9b3c-fe77456d01dc" class="bulleted-list"><li style="list-style-type:disc">HMRC is conducting a compliance check.</li></ul></details></li></ul><ul id="1a4a84cb-7aff-809c-89cb-e82bba9778bc" class="toggle"><li><details open=""><summary><strong>5.5 Lost, stolen, or destroyed records</strong></summary><p id="1a4a84cb-7aff-800a-b8b4-e8c5a347aedc" class="">If your records are lost, stolen, or destroyed, you <strong><span style="border-bottom:0.05em solid">must</span></strong>:</p><p id="1a4a84cb-7aff-80b9-a03c-f4929ce37618" class="">Try to recreate them as best as possible.</p><p id="1a4a84cb-7aff-8024-b836-e48a737b57ae" class="">Inform HMRC’s Corporation Tax Office immediately.</p><p id="1a4a84cb-7aff-8016-99a1-d8a9fa8182f3" class="">Include an explanation in your Company Tax Return.</p></details></li></ul></details></li></ul><ul id="1a4a84cb-7aff-80c6-9b63-ecc5a6face4d" class="toggle"><li><details open=""><summary><strong><span style="border-bottom:0.05em solid">Step 6: Register your company with Companies House</span></strong></summary><ul id="1a4a84cb-7aff-8026-bc0f-ee8de5bae407" class="toggle"><li><details open=""><summary><strong>6.1 Your company’s official address</strong></summary><p id="1a4a84cb-7aff-808c-be6e-cc410dc56402" class="">Your company must have a UK registered office address.</p><p id="1a4a84cb-7aff-80df-9630-d7089cb251c2" class="">The address must be a physical location (not a P.O Box).</p><ul id="1a4a84cb-7aff-8046-b5c2-e84576a39bd5" class="bulleted-list"><li style="list-style-type:disc">Companies House and HMRC will send statutory/official mail to this address.</li></ul><ul id="1a4a84cb-7aff-8024-84ee-f33f7c1cf880" class="bulleted-list"><li style="list-style-type:disc">The address will be publicly visible on Companies House through the <a href="https://find-and-update.company-information.service.gov.uk/">Companies House Search Service</a>.</li></ul><p id="1a4a84cb-7aff-80e3-ae2d-c42a24895344" class="">Keeping your address private</p><ul id="1a4a84cb-7aff-8048-a079-f72efdf10fb6" class="bulleted-list"><li style="list-style-type:disc">If you do not want your home address to be public, you should not use it as your company’s registered office.</li></ul></details></li></ul><ul id="1a4a84cb-7aff-80e1-b3b1-ed155c634564" class="toggle"><li><details open=""><summary><strong>6.2 Your registered email address</strong></summary><p id="1a4a84cb-7aff-809c-9ac6-e89649012630" class="">You <strong><span style="border-bottom:0.05em solid">must </span></strong>provide a company email address when registering (which will not be made public).</p><p id="1a4a84cb-7aff-80b1-88f4-dbd16d9a16e3" class="">You <strong><span style="border-bottom:0.05em solid">must </span></strong>monitor this email regularly.</p><ul id="1a4a84cb-7aff-80e1-835e-e39950ab64d5" class="bulleted-list"><li style="list-style-type:disc">Companies House may use it to contact you about official company matters.</li></ul></details></li></ul><ul id="1a4a84cb-7aff-8094-9c0d-f49617577a1e" class="toggle"><li><details open=""><summary><strong>6.3 Choose a Standard Industrial Classification (SIC) code</strong></summary><p id="1a4a84cb-7aff-8022-b95e-cb769889fd68" class="">You are required to determine your business activity and its corresponding SIC</p><p id="1a4a84cb-7aff-8033-aa76-c4e5b097f8a4" class="">code.</p><p id="1a4a84cb-7aff-8012-964b-f5aed73d43f6" class="">You can find the official SIC code list <a href="https://resources.companieshouse.gov.uk/sic/">here</a>.</p></details></li></ul><ul id="1a4a84cb-7aff-8068-8740-dfa1675da834" class="toggle"><li><details open=""><summary><strong>6.4 Registering your company</strong></summary><p id="1a4a84cb-7aff-80dd-b936-d47b98be0377" class="">You <strong><span style="border-bottom:0.05em solid">must </span></strong>provide at least 3 pieces of personal information for yourself and your shareholders, such as:</p><p id="1a4a84cb-7aff-800f-9045-ed485120555e" class="">Town of birth</p><p id="1a4a84cb-7aff-8004-a3c2-f3b5c746bf1d" class="">Mother’s maiden name</p><p id="1a4a84cb-7aff-80c5-b270-ebd9f1d56169" class="">Father’s first name</p><p id="1a4a84cb-7aff-8089-8240-c580a495f74c" class="">Telephone number</p><p id="1a4a84cb-7aff-80aa-b327-c4940407a690" class="">National Insurance Number</p><p id="1a4a84cb-7aff-801b-ae5e-fc7057cde7ad" class="">Passport Number</p><p id="1a4a84cb-7aff-8060-ad2f-dc5caaac0ff5" class="">It cost £50 and can be paid by debit or credit card.</p><p id="1a4a84cb-7aff-809a-8f59-d019e2d2d611" class="">Your company is usually registered within 24 hours.</p></details></li></ul><ul id="1a4a84cb-7aff-8077-aae4-ff51555350e4" class="toggle"><li><details open=""><summary><strong>6.5 Additional services when registering online</strong></summary><p id="1a4a84cb-7aff-8020-942e-d4221e41d570" class=""> Register for PAYE (if employing staff, including yourself).</p><p id="1a4a84cb-7aff-801f-b436-e5449aa0f68c" class="">Continuing an existing registration application.</p><p id="1a4a84cb-7aff-8050-880e-c46a43aa2ee6" class="">If you do not want to use ‘Limited’ in your company name, you must register by post.</p></details></li></ul><ul id="1a4a84cb-7aff-80ef-a298-f6c97817dee0" class="toggle"><li><details open=""><summary><strong>6.6 Ways to register</strong></summary><p id="1a4a84cb-7aff-8065-b8a1-dbf0af18410f" class="">By post (using <a href="https://www.gov.uk/government/publications/register-a-private-or-public-company-in01">Form IN01</a>, 8-10 days, £71.00)</p><p id="1a4a84cb-7aff-80f7-926b-dcc3d5a1c3d4" class=""><a href="https://www.gov.uk/government/publications/formation-and-company-secretarial-agents">Using an agent</a></p><p id="1a4a84cb-7aff-8000-8040-ecbdc2e36bd0" class=""><a href="https://www.gov.uk/company-filing-software">Using third-party software</a></p></details></li></ul></details></li></ul><ul id="1a4a84cb-7aff-80db-8b06-c39b456f7795" class="toggle"><li><details open=""><summary><strong><span style="border-bottom:0.05em solid">Step 7: Manage your Corporation Tax</span></strong></summary><p id="1a4a84cb-7aff-805c-b8c7-e6d0d715ab25" class="">You should add Corporation Tax services to your account when you start to do business.</p><ul id="1a4a84cb-7aff-806d-a003-fd5c4c84d99e" class="toggle"><li><details open=""><summary><strong>7.1 Add Corporation Tax to your business tax account</strong></summary><p id="1a4a84cb-7aff-801b-97cb-da0f82f51e7f" class="">You will need:</p><p id="1a4a84cb-7aff-8075-a42e-c8d2d0c06bf1" class="">Your company’s registration number.</p><p id="1a4a84cb-7aff-8033-aec7-c8bef0f90f1c" class="">The date you started your business (your company’s first <a href="https://www.gov.uk/corporation-tax-accounting-period">accounting period</a> will start from this date).</p><p id="1a4a84cb-7aff-8097-81fb-c64a5fc9bcf2" class="">The date you set up your first account.</p><p id="1a4a84cb-7aff-80d1-a373-f0fc24202a54" class="">Your company’s 10-digit Unique Taxpayer Reference (UTR) - you can find your UTR on any letter from HMRC.</p><ul id="1a4a84cb-7aff-8034-8b21-e44b9b139ebf" class="bulleted-list"><li style="list-style-type:disc">If you did not get a UTR 15 working days after registering your company, you can <a href="https://www.tax.service.gov.uk/ask-for-copy-of-your-corporation-tax-utr">request your company’s UTR online</a>.</li></ul></details></li></ul><ul id="1a4a84cb-7aff-8089-89f0-f84874ef471a" class="toggle"><li><details open=""><summary><strong>7.2 How to add Corporation Tax services</strong></summary><p id="1a4a84cb-7aff-8048-b336-ede0d528f29c" class=""><a href="https://www.access.service.gov.uk/login/signin/creds">Sign in to your business tax account </a>using your Government Gateway user ID and password. If you do not have a user ID, you can create one when you sign in.</p><p id="1a4a84cb-7aff-809c-bf7c-c3d948325958" class="">Select ‘Services you can add’ in the left hand menu.</p><p id="1a4a84cb-7aff-8004-a3e4-da5a8aec1a9a" class="">Find the Corporation Tax service and select ‘Enrol for service’.</p></details></li></ul></details></li></ul><p id="1a4a84cb-7aff-805d-8020-cb3b9a043147" class=""><div class="indented"><p id="1a4a84cb-7aff-8005-8491-c2e369b237bc" class=""><div class="indented"><p id="1a4a84cb-7aff-8035-83ac-cef14383acfb" class="">
+</p><p id="1a4a84cb-7aff-8036-880a-f865061afa53" class="">
+</p><p id="1a4a84cb-7aff-8017-b0c0-c35fd580fcc8" class="">
+</p><p id="1a4a84cb-7aff-8089-a919-d3ad126e34c3" class=""><strong></strong></p><p id="1a4a84cb-7aff-80ae-af28-fcbb0a790821" class="">
+</p><p id="1a4a84cb-7aff-8057-b8cf-eeeadba24221" class="">
+</p><p id="1a4a84cb-7aff-807b-8a75-e60acb8d6198" class=""><strong></strong></p><p id="1a4a84cb-7aff-80f2-9fbb-dbba72593d86" class="">
+</p><p id="1a4a84cb-7aff-8015-afe8-e6b1a32dd156" class="">
+</p></div></p></div></p><p id="1a4a84cb-7aff-8083-9c1b-f3daa085bbde" class="">
+</p><p id="1a4a84cb-7aff-8077-8eb3-c9cadb398ec9" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span><script>
+document.addEventListener("DOMContentLoaded", function () {
+    const detailsElements = document.querySelectorAll("details");
+
+    detailsElements.forEach(details => {
+        details.addEventListener("toggle", () => {
+            console.log("折叠/展开状态改变：" + details.open);
+        });
+    });
+});
+</script>
+</body></html>
